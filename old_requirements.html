@@ -1,0 +1,73 @@
+ <html> 
+ <head><title>CHTC HTCondor submit file generator</title></head> 
+ <body> 
+ <h2>CHTC HTCondor Submit file generator</h2><p>
+nyehle@cs.wisc.edu 10.14.2013 1.2<p> 
+ <form action="requirements.php" method="post"> 
+ <table> 
+ <tr><td>Job Name:</td><td><input type="text" name="Name" /></td></tr> 
+ <tr><td>Age:</td><td><input type="text" name="Age" /></td></tr>
+Requirements are broken into two sections, OR requirements mean the your job can run on any of the listed types of nodes.
+AND requirements mean your requires the requested feature.
+<h1>OR Requirements</h1> 
+<hr>  
+CPU Architecture<br>
+<p>|| TARGET.Arch == "INTEL" || TARGET.Arch == "X86_64" requirements stating your job will run on any of these architectures.  Defaults to the submit node architecture</p>
+<input type="checkbox" name="ArchINTEL" value="INTEL">32 Bit Arch<br></tr>
+<input type="checkbox" name="ArchX86_64" value="X86_64" checked="yes" >64 Bit Arch<br></tr><br>
+<hr>
+Operating System HTCondor OpSys<br>
+<p>Defaults to the submit node OpSys if none are selected</p>
+<input type="checkbox" name="OpSysLinux" value="Linux" checked="yes" >Linux ( TARGET.OpSys == "LINUX" )<br><tr>
+<input type="checkbox" name="OpSysOSX" value="OSX">OSX ( TARGET.OpSys == "OSX" )<br><tr>
+<input type="checkbox" name="OpSysWindows" value="Windows"> Windows 7( TARGET.OpSys == "WINDOWS" )<br><tr>
+<hr>
+Linux Operating System Major Release Version<br>
+<input type="checkbox" name="OpSysMajorVer5" value="true" > OpSysMajorVer = 5 for ScientificLinux/Redhat/CENTOS 5.x releases<br><tr>
+<input type="checkbox" name="OpSysMajorVer6" value="true">OpSysMajorVer = 6 for ScientificLinux/Redhat/CENTOS 6.x releases<br><tr>
+<hr>
+<h1>AND Requirements</h1>
+<hr>
+Shared Filesystem<br>
+<input type="checkbox" name="SharedFSHasAfs" value="true"> AFS ( TARGET.HasAfs == "True" )<br><tr>
+<p> Nodes with HasAFS=true have read only AFS access like this example path: /afs/cs.wisc.edu</p>
+<input type="checkbox" name="SharedFSOASIS_CVMFS_Exists" value="true" > OASIS CVMFS ( TARGET.OASIS_CVMFS_Exists  == "True" )<br><tr>
+<hr>
+Locally Installed Software (via rsync to each exec node)<br>
+<input type="checkbox" name="LocalSoftwareHasGams" value="true"> /data2/gams ( TARGET.HasGams == "True )<br><tr>
+<input type="checkbox" name="LocalSoftwareHasFreesurfer510" value="true"> /data2/grecc/freesurfer5.1.0 ( TARGET.HasFreesurfer510 == "True" )<br><tr>
+<input type="checkbox" name="LocalSoftwareHasMatlab" value="true"> /usr/local/MATLAB/R2011b Matlab Compiler<br><tr>
+<input type="checkbox" name="LocalSoftwareHasJava" value="true"> Java ( TARGET.HasJava == "True" ) <br><tr>
+<input type="checkbox" name="LocalSoftwareHasComsol" value="true"> Comsol43b ( TARGET.HasComsol== "True" ) <br><tr>
+osg-version-3.1.16-1.osg.el6.noarch (tbd) <br><tr>
+<hr>
+HTCondor Features<br>
+<input type="checkbox" name="WholeMachineSlot" value="True"> Whole Machine Slot<br><tr>
+<input type="checkbox" name="HasMPI" value="True"> HasMPI <br><tr>
+<input type="checkbox" name="HasVM" value="True"> HasVM <br><tr>
+<input type="checkbox" name="VM_Typekvm" value="True"> VM_Type = kvm ( Target.VM_Type =="kvm" )<br><tr>
+
+<hr>
+Exclude CPU Hyperthreading<br>
+<p>&& TARGET.HasHT =="False"</p>
+<input type="checkbox" name="HasHT" value="True">Exclude Hyperthreaded CPUs, Some MPI jobs prefer this <br><tr>
+<hr>
+GenuineIntel CPUs<br>
+<p> Some compilers do better with INTEL only cpus   && TARGET.HasIntel == "True"</p>
+<input type="checkbox" name="HasIntel" value="True" > Require a GenuineIntel CPU <br></tr>
+<hr>
+TODO<br>
+HasGPU
+<br>
+Programming Language<br>
+<p> HasJava HasMatlab HasR HasPython HasPython2.7 HasPerl</p>
+<hr>
+
+
+<hr>
+ <tr><td colspan="2" align="center"><input type="submit" /><br>
+<input type="button" onclick="formReset()" value="Reset form"></td></tr> 
+ </table> 
+ </form> 
+ </body> 
+ </html> 
