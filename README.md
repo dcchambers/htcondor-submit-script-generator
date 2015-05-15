@@ -14,8 +14,3 @@ TODO:
   Some other resources:
        http://research.cs.wisc.edu/htcondor/quick-start.html
        http://research.cs.wisc.edu/htcondor/manual/v7.6/2_5Submitting_Job.html
-
-
-~~
-
-Testing dev branch

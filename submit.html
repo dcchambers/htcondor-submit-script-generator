@@ -6,9 +6,73 @@
       <script src="submitJS.js"></script>
     </head>
     <body>
-      New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><br>
-      <form action = "scripgenerator.php" method="post">
-        Form goes here.
+      New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
+      <form action = "scriptgenerator.php" method="post">
+        <h3>"OR Requirements"</h3>
+        
+        CPU Architecture:<br>
+        <input type="checkbox" name="ArchINTEL" value="INTEL">32 Bit<br>
+        <input type="checkbox" name="ArchX86_64" value="X86_64" checked="yes">64 Bit<br>
+        <br>
+        
+        Operating System:<br>
+        <input type="checkbox" name="OpSysLinux" value="Linux" checked="yes">Linux<br>
+        <input type="checkbox" name="OpSysOSX" value="OSX">OS X<br>
+        <input type="checkbox" name="OpSysWindows" value="Windows">Windows<br>
+        <br>
+        
+        Linux OS Release Version:<br>
+        /////this should only pop up if "linux" is selected above/////<br>
+        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 5.x<br>
+        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 6.x<br>
+        
+        
+        <!--  AND REQUIREMENTS -->
+        
+        <br><h3>"AND Requirements"</h3>
+        
+        Shared Filesystem:<br>
+        <input type="checkbox" name="SharedFSHasAfs" value="true">AFS<br>
+        <input type="checkbox" name="SharedFSOASIS_CVMFS_Exists" value="true" >OASIS CVMFS<br>
+        <br>
+        
+        Locally Installed Software:<br>
+        <input type="checkbox" name="LocalSoftwareHasGams" value="true">Games<br>
+        <input type="checkbox" name="LocalSoftwareHasFreesurfer510" value="true">Freesurfer 5.1.0<br>
+        <input type="checkbox" name="LocalSoftwareHasMatlab" value="true">Matlab Compiler<br>
+        <input type="checkbox" name="LocalSoftwareHasJava" value="true">Java<br>
+        <input type="checkbox" name="LocalSoftwareHasComsol" value="true">Comsol43b<br>
+        <br>
+        
+        HTCondor Features:<br>
+        <input type="checkbox" name="WholeMachineSlot" value="True">Whole Machine Slot<br>
+        <input type="checkbox" name="HasMPI" value="True">HasMPI <br>
+        <input type="checkbox" name="HasVM" value="True">HasVM <br>
+        <input type="checkbox" name="VM_Typekvm" value="True">VM_Type = kvm<br>
+        <br>
+
+        Exclude CPU Hyperthreading:<br>
+        <input type="checkbox" name="HasHT" value="True">Exclude Hyperthreaded CPUs (Some MPI jobs prefer this) <br>
+        <br>
+
+        INTEL Only CPUs<br>
+        Some compilers do better with INTEL only cpus<br>
+        <input type="checkbox" name="HasIntel" value="True" > Require a GenuineIntel CPU <br></tr>
+        <br>  
+  
+        GPU:<br>
+        <br>
+        
+        Programming Language:<br>
+        <input type="checkbox" name="HasJava" value="True">Java<br>
+        <input type="checkbox" name="HasMatlab" value="True">MatLab<br> 
+        <input type="checkbox" name="HasR" value="True">R (Rust?)<br> 
+        <input type="checkbox" name="HasPython" value="True">Python<br>
+        <input type="checkbox" name="HasPython2.7" value="True">Python 2.7<br>
+        <input type="checkbox" name="HasPerl" value="True">Perl<br>
+        <br>
+        
+        <input type="submit">
         
       </form>
     
