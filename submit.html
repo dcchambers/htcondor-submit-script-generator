@@ -6,9 +6,32 @@
       <script src="submitJS.js"></script>
     </head>
     <body>
-      New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><br>
-      <form action = "scripgenerator.php" method="post">
-        Form goes here.
+      New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
+      <form action = "scriptgenerator.php" method="post">
+        <h3>"OR Requirements"</h3>
+        
+        CPU Architecture:<br>
+        <input type="checkbox" name="ArchINTEL" value="INTEL">32 Bit<br>
+        <input type="checkbox" name="ArchX86_64" value="X86_64" checked="yes">64 Bit<br>
+        <br>
+        
+        Operating System:<br>
+        <input type="checkbox" name="OpSysLinux" value="Linux" checked="yes">Linux<br>
+        <input type="checkbox" name="OpSysOSX" value="OSX">OS X<br>
+        <input type="checkbox" name="OpSysWindows" value="Windows">Windows<br>
+        <br>
+        
+        Linux OS Release Version:<br>
+        /////this should only pop up if "linux" is selected above/////<br>
+        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 5.x<br>
+        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 6.x<br>
+        
+        
+        
+        
+        
+        <br><h3>"AND Requirements"</h3>
+        Checking a box will only let the job run on hardware with that requirement.
         
       </form>
     
