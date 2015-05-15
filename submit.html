@@ -7,7 +7,7 @@
     </head>
     <body>
       New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
-      <form action = "scriptgenerator.php" method="post">
+      <!--<form action = "scriptgenerator.php" method="post">-->
         <h3>"OR Requirements"</h3>
         
         CPU Architecture:<br>
@@ -72,9 +72,15 @@
         <input type="checkbox" name="HasPerl" value="True">Perl<br>
         <br>
         
-        <input type="submit">
+        <input type="submit" onclick="generate()">
         
-      </form>
+      <!--</form>-->
+    
+      <br>
+      <h3 id="outputHeader" style="display:none">Output</h3>
+      <div id="output" style="display:none">
+          
+      </div>
     
     </body>
 </html>
