@@ -23,16 +23,22 @@ function readConfigFile(){
     } else {
         alert('File APIs not supported with this browser. Cannot load the form config file.');
     }
+    
     var fileDisplayArea = document.getElementById('fileDisplayArea');
-    var file = "file:///chtcrequirements.txt";
-    var reader = new FileReader();
+    var oFrame = document.getElementById("frmFile");
+    var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     
-    reader.readAsText(file);
-    
-    reader.onload = function(e) {
-      fileDisplayArea.innterText = reader.result;
-      alert(reader.result);
-    };
+    while (strRawContents.indexOf("\r") >= 0){
+        strRawContents = strRawContents.replace("\r", "");
+    }
+        
+    var arrLines = strRawContents.split("\n");
+    fileDisplayArea.innerText +="File " + oFrame.src + " has " + arrLines.length + " lines."+"\n\n";
+    for (var i = 0; i < arrLines.length; i++) {
+        var curLine = arrLines[i];
+        //alert("Line #" + (i + 1) + " is: '" + curLine + "'");
+        fileDisplayArea.innerText += curLine+"\n";
+    }
     
 }
 

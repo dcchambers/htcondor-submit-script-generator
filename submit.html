@@ -6,14 +6,17 @@
       <link rel="stylesheet" type="text/css" href="submitStyle.css">
       <script src="submitJS.js"></script>
     </head>
-    <body onload="readConfigFile()">
+    <body>
       New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
       <!--<form action = "scriptgenerator.php" method="post">-->
       
-        <br>DEBUG: <br><br><hr>
+        <br>Config File Contets: <br><br>
         <div id="fileDisplayArea">
-          
-        </div>
+        </div><hr>
+
+        <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
+
+
         <h3>"OR Requirements"</h3>
         
         CPU Architecture:<br>
