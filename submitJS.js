@@ -15,7 +15,7 @@ function generate(){
     window.scrollTo(0,document.body.scrollHeight);
 }
 
-/*
+
 function readConfigFile(){
     // Check for the various File API support.
     if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -24,8 +24,17 @@ function readConfigFile(){
         alert('File APIs not supported with this browser. Cannot load the form config file.');
     }
     var fileDisplayArea = document.getElementById('fileDisplayArea');
+    var file = "file:///chtcrequirements.txt";
+    var reader = new FileReader();
     
-}*/
+    reader.readAsText(file);
+    
+    reader.onload = function(e) {
+      fileDisplayArea.innterText = reader.result;
+      alert(reader.result);
+    };
+    
+}
 
 /*
 window.onload = function() {
