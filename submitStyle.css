@@ -3,3 +3,9 @@
 #output{
   border-style: solid;
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: 4f4f4f;
+  background-color: f9f9f9;
+}
