@@ -9,6 +9,14 @@
     <body>
       New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
       <!--<form action = "scriptgenerator.php" method="post">-->
+      
+        <br>Config File Contets: <br><br>
+        <div id="fileDisplayArea">
+        </div><hr>
+
+        <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
+
+
         <h3>"OR Requirements"</h3>
         
         CPU Architecture:<br>
@@ -38,7 +46,7 @@
         <br>
         
         Locally Installed Software:<br>
-        <input type="checkbox" name="LocalSoftwareHasGams" value="true">Games<br>
+        <input type="checkbox" name="LocalSoftwareHasGams" value="true">Gams<br>
         <input type="checkbox" name="LocalSoftwareHasFreesurfer510" value="true">Freesurfer 5.1.0<br>
         <input type="checkbox" name="LocalSoftwareHasMatlab" value="true">Matlab Compiler<br>
         <input type="checkbox" name="LocalSoftwareHasJava" value="true">Java<br>
