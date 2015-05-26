@@ -1,0 +1,14 @@
+Arch=="INTEL"
+Arch x86_64
+OpSys Linux
+OpSys OSX
+OpSys Windows
+OpSysMajorVer 5
+OpSysMajorVer 6
+OpSysMajorVer 7
+HasAfs True
+OASIS_CVMFS_Exists True
+HasHT False
+HasJava True
+HasIntel True
+HasGluster True

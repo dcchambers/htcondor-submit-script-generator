@@ -3,9 +3,13 @@
 function generate(){
     document.getElementById("outputHeader").style.display="block";
     document.getElementById("output").style.display="block";
+    document.getElementById("copy-button").style.display="block";
     document.getElementById("output").innerHTML = (
-        "<code>test<br>"+
-        "test</code>"
+        "<code>"+
+        "##########################<br>#<br>"+
+        "# - HTCondor Submit File -<br>#<br>"+
+        ""+
+        "</code>"
         
     );
     window.scrollTo(0,document.body.scrollHeight);
