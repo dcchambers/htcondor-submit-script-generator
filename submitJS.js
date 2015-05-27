@@ -17,6 +17,16 @@ function generateScript(){
         "</code>"
         
     );
+    var i;
+    var text = "";
+    var x = document.getElementById("form1");
+    for (i=0; i < x.length; i++){
+	document.getElementById("output").innerHTML += (
+            text = x.elements[i].value +"<br>"
+	    
+        );
+    }
+    
     window.scrollTo(0,document.body.scrollHeight);
 }
 
@@ -61,10 +71,7 @@ function generateForm(textLine){
   fileDisplayArea.innerText += textLine+"\n"; //DEBUG
 
   var splitLine = textLine.split(","); //split the line up by commas into an array.
-
-  document.getElementById('form').innerHTML += 
-      "<input type=\"checkbox\" name=\"ARCH\" value=\"INTEL\">"+splitLine[2]+"<br>"; //formDisplayArea.innerHTML wasn't working right.
-
-  
+  document.getElementById('form1').innerHTML += 
+      "<input type=\"checkbox\" name=\"ARCH\" value=\"INTEL\">"+splitLine[2]+"<br>"; //formDisplayArea.innerHTML wasn't working right.  
 }
 
