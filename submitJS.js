@@ -1,6 +1,6 @@
 //submit JS file
 
-function generate(){
+function generateScript(){
     document.getElementById("outputHeader").style.display="block";
     document.getElementById("output").style.display="block";
     document.getElementById("copy-button").style.display="block";
@@ -26,6 +26,7 @@ function readConfigFile(){
     }
     
     var fileDisplayArea = document.getElementById('fileDisplayArea');
+    //var formDisplayArea = document.getElementById('form');
     var oFrame = document.getElementById("frmFile");
     var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     
@@ -38,40 +39,17 @@ function readConfigFile(){
     for (var i = 0; i < arrLines.length; i++) {
         var curLine = arrLines[i];
         //alert("Line #" + (i + 1) + " is: '" + curLine + "'");
-        fileDisplayArea.innerText += curLine+"\n";
+        //fileDisplayArea.innerText += curLine+"\n";
+        generateForm(curLine);
     }
     
 }
 
-/*
-window.onload = function() {
+function generateForm(textLine){
+  fileDisplayArea.innerText += textLine+"\n"; //DEBUG
+  document.getElementById('form').innerHTML += 
+    "<input type=\"checkbox\" name=\"ArchINTEL\" value=\"INTEL\">32 Bit<br>"; //formDisplayArea.innerHTML wasn't working right.
   
-    // Check for the various File API support.
-    if (window.File && window.FileReader && window.FileList && window.Blob) {
-        // Great success! All the File APIs are supported.
-    } else {
-        alert('File APIs not supported with this browser. Cannot load the form config file.');
-    }
-
   
-		var fileDisplayArea = document.getElementById('fileDisplayArea');
-
-		fileInput.addEventListener('change', function(e) {
-			var file = "chtcrequirements.txt";
-      var textType =
-
-			if (file.type.match(textType)) {
-				var reader = new FileReader();
-
-				reader.onload = function(e) {
-					fileDisplayArea.innerText = reader.result;
-				}
-
-				reader.readAsText(file);	
-			} else {
-				fileDisplayArea.innerText = "File not supported!"
-			}
-		});
-}*/
-
+}
 
