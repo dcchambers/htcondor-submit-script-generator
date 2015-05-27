@@ -2,10 +2,18 @@
 
 #output{
   border-style: solid;
+  border-color: e1e1e1;
+  padding: 10px 10px;
+  margin: 10px;
+  font-size: 16;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   color: 4f4f4f;
   background-color: f9f9f9;
+}
+
+a{
+  text-decoration: none;
 }

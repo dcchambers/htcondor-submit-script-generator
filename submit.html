@@ -10,11 +10,17 @@
       New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
       <!--<form action = "scriptgenerator.php" method="post">-->
       
-        <br>Config File Contets: <br><br>
+        <br>[DEBUG] Config File Contets: <br><br>
         <div id="fileDisplayArea">
         </div><hr>
 
         <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
+
+        <div id="form">
+          FORM
+          
+          <hr>
+        </div>
 
 
         <h3>"OR Requirements"</h3>
@@ -90,7 +96,8 @@
       <div id="output" style="display:none">
           
       </div>
-      <button id="copy-button" style="display:none">Copy to Clipboard (this button is broken)</button>
+      <button id="copy-button" style="display:none">Copy to Clipboard (TODO)</button>
+      <a href="chtcrequirements.txt" download id="dlButton" style="display:none">Download File (TODO)</a>
 
     
     </body>

@@ -4,6 +4,7 @@ function generate(){
     document.getElementById("outputHeader").style.display="block";
     document.getElementById("output").style.display="block";
     document.getElementById("copy-button").style.display="block";
+    document.getElementById("dlButton").style.display="block";
     document.getElementById("output").innerHTML = (
         "<code>"+
         "##########################<br>#<br>"+
