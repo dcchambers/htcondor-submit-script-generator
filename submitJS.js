@@ -21,10 +21,11 @@ function generateScript(){
     var text = "";
     var x = document.getElementById("form1");
     for (i=0; i < x.length; i++){
-	document.getElementById("output").innerHTML += (
-            text = x.elements[i].value +"<br>"
-	    
-        );
+	
+	document.getElementById("output").innerHTML += 
+	    (						
+	    text = x.elements[i].value +"<br>"
+	     );
     }
     
     window.scrollTo(0,document.body.scrollHeight);
