@@ -1,4 +1,4 @@
-Arch=="INTEL"
+Arch INTEL
 Arch x86_64
 OpSys Linux
 OpSys OSX

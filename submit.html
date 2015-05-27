@@ -12,16 +12,15 @@
       
         <br>[DEBUG] Config File Contets: <br><br>
         <div id="fileDisplayArea">
-        </div><hr>
-
-        <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
-
+        </div>
+        <hr>
         <div id="form">
-          FORM
+          Generated from Config File:<br>
           
           <hr>
         </div>
 
+        <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
 
         <h3>"OR Requirements"</h3>
         
@@ -87,7 +86,7 @@
         <input type="checkbox" name="HasPerl" value="True">Perl<br>
         <br>
         
-        <input type="submit" onclick="generate()">
+        <input type="submit" onclick="generateScript()">
         
       <!--</form>-->
     
