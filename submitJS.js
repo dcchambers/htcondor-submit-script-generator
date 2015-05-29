@@ -21,11 +21,13 @@ function generateScript(){
     var text = "";
     var x = document.getElementById("form1");
     for (i=0; i < x.length; i++){
-	
-	document.getElementById("output").innerHTML += 
-	    (						
-	    text = x.elements[i].value +"<br>"
-	     );
+      
+      //now we need to check if the element is "checked" in the form, and if
+      //it is, we need to add it to the script that gets printed out.
+	    document.getElementById("output").innerHTML += 
+	      (						
+	      text = x.elements[i].value +"<br>"
+	      ); //why does this not advance through the list?
     }
     
     window.scrollTo(0,document.body.scrollHeight);
