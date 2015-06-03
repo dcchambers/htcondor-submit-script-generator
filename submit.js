@@ -78,3 +78,11 @@ function generateForm(textLine){
       "<input type=\"checkbox\" name=\"ARCH\" value=\"INTEL\">"+splitLine[2]+"<br>"; //formDisplayArea.innerHTML wasn't working right.  
 }
 
+
+/*
+ * DEBUG function.
+ */
+function debugFile(){
+  document.getElementById('fileDisplayArea').style.display="block";
+}
+
