@@ -17,6 +17,9 @@ function generateScript(){
         "</code>"
         
     );
+    
+    /***************************************
+     * TODO - FIX THIS PART.
     var i;
     var text = "";
     var x = document.getElementById("form1");
@@ -29,8 +32,9 @@ function generateScript(){
 	      text = x.elements[i].value +"<br>"
 	      ); //why does this not advance through the list?
     }
-    
+    */
     window.scrollTo(0,document.body.scrollHeight);
+    
 }
 
 /* The readConfigFile() function checks to make sure the browser supports reading
