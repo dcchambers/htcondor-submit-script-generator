@@ -7,18 +7,12 @@
       <script src="submit.js"></script>
     </head>
     <body>
-      New here? Try the <a href = "submit-tutorial.html">tutorial</a>!<br><hr>
       <!--<form action = "scriptgenerator.php" method="post">-->
       
-        <br>[DEBUG] Config File Contets: <br><br>
-        <div id="fileDisplayArea">
+        <button id="debug" onclick="debugFile()"> [DEBUG] Show File Contents </button>
+        <div id="fileDisplayArea" style="display:none;">
         </div>
-        <hr>
-        <form id="form1">
-          Generated from Config File:<br>
-	  <!-- HTML is inserted in here via the JS form Generation Script-->
-        </form>
-	<hr>
+        
 
         <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
 
@@ -85,6 +79,13 @@
         <input type="checkbox" name="HasPython2.7" value="True">Python 2.7<br>
         <input type="checkbox" name="HasPerl" value="True">Perl<br>
         <br>
+        
+        <hr>
+        <form id="form1">
+          <b>Advanced Options:</b><br>
+	      <!-- HTML is inserted in here via the JS form Generation Script-->
+        </form>
+	      <hr>
         
         <input type="submit" onclick="generateScript()">
         
