@@ -8,15 +8,36 @@
     </head>
     <body>
       <!--<form action = "scriptgenerator.php" method="post">-->
+        <form id="f2">
       
         <button id="debug" onclick="debugFile()"> [DEBUG] Show File Contents </button>
         <div id="fileDisplayArea" style="display:none;">
         </div>
         
-
         <iframe id="frmFile" src="chtcrequirements.txt" onload="readConfigFile();" style="display: none;"></iframe>
 
-        <h3>"OR Requirements"</h3>
+        <h3> Information </h3>
+        
+        Universe: <input type="text" name="universe" value="vanilla"> ("vanilla" is the default and used for almost all jobs)<br>
+        Log File: <input type="text" name="log" value="default_$(Cluster).log"><br>
+        
+        <br>
+        Executable: <input type="text" name="executable"><br>
+        Arguments: <input type="text" name="arguments" value="$(Process)"><br>
+        Output File: <input type="text" name="output" value="default_$(Cluster)_$(Process).out"><br>
+
+        <br>
+        Transfer Files Section
+        
+        <h3> Resources Requested </h3>
+        
+        CPUs: <input type="number" name="request_cpus" value="1"><br>
+        Memory: <input type="number" name="request_memory" value="1000"> (MB)<br>
+        Disk: <input type="number" name="request_disk" value="1000"> (KB)<br>
+        
+        
+
+        <h3>"OR" Requirements</h3>
         
         CPU Architecture:<br>
         <input type="checkbox" name="ArchINTEL" value="INTEL">32 Bit<br>
@@ -37,7 +58,7 @@
         
         <!--  AND REQUIREMENTS -->
         
-        <br><h3>"AND Requirements"</h3>
+        <br><h3>"AND" Requirements</h3>
         
         Shared Filesystem:<br>
         <input type="checkbox" name="SharedFSHasAfs" value="true">AFS<br>
@@ -79,6 +100,8 @@
         <input type="checkbox" name="HasPython2.7" value="True">Python 2.7<br>
         <input type="checkbox" name="HasPerl" value="True">Perl<br>
         <br>
+        
+        </form>
         
         <hr>
         <form id="form1">
