@@ -13,9 +13,10 @@ function generateScript(){
         "<code>"+
         "##########################<br>#<br>"+
         "# - HTCondor Submit File -<br>#<br>"+
-        ""+
+        "<BASIC FORM GOES HERE>"+
+        "<Advanced Options (from the input config file) go here.>"+
         "</code>"
-        
+       
     );
     
     /***************************************
