@@ -35,10 +35,7 @@ function generateScript(){
         "</code>"
     );
     
-    /*if (document.getElementById("adv1").checked === true){
-        document.getElementById("output").innerHTML+="<code>Arch==INTEL</code>";
-    }*/
-    
+    /* This part of the script generator pastes the checked advanced items into the script*/
     var i = 0;
     for (i; i<numLines; i++){
         if (document.getElementsByName("adv")[i].checked === true){
@@ -86,7 +83,6 @@ function readConfigFile(){
 
 /* generateForm(String) uses the config file to create the HTML form
  * that the user is presented with.
- *
  */
 function generateForm(textLine){
   fileDisplayArea.innerText += textLine+"\n"; //DEBUG
