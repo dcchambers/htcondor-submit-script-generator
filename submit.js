@@ -13,8 +13,19 @@ function generateScript(){
         "<code>"+
         "##########################<br>#<br>"+
         "# - HTCondor Submit File -<br>#<br>"+
-        "<BASIC FORM GOES HERE>"+
-        "<Advanced Options (from the input config file) go here.>"+
+        "# - Information - <br>"+
+        "universe = "+document.getElementsByName("universe")[0].value+"<br>"+
+        "log = "+document.getElementsByName("log")[0].value+"<br>"+
+        "executable = "+document.getElementsByName("executable")[0].value+"<br>"+
+        "arguments = "+document.getElementsByName("arguments")[0].value+"<br>"+
+        "output = "+document.getElementsByName("output")[0].value+"<br>"+
+        "# TODO - Transfer File Section <br>"+
+        "request_cpus = "+document.getElementsByName("request_cpus")[0].value+"<br>"+
+        "request_memory = "+document.getElementsByName("request_memory")[0].value+"<br>"+
+        "request_disk = "+document.getElementsByName("request_disk")[0].value+"<br>"+
+        "# TODO - Queue <br>"+
+        
+        
         "</code>"
        
     );
