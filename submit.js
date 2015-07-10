@@ -4,6 +4,9 @@
 /* This function generates the Condor Submit Script based on the HTML
  * that the user fills out. It is called with a submit button on the page.
  */
+ 
+var numLines = 0; 
+ 
 function generateScript(){
     document.getElementById("outputHeader").style.display="block";
     document.getElementById("output").style.display="block";
@@ -19,32 +22,31 @@ function generateScript(){
         "executable = "+document.getElementsByName("executable")[0].value+"<br>"+
         "arguments = "+document.getElementsByName("arguments")[0].value+"<br>"+
         "output = "+document.getElementsByName("output")[0].value+"<br>"+
-        "# TODO - Transfer File Section <br>"+
+        "# TODO - Transfer Files Section <br>"+
         "request_cpus = "+document.getElementsByName("request_cpus")[0].value+"<br>"+
         "request_memory = "+document.getElementsByName("request_memory")[0].value+"<br>"+
         "request_disk = "+document.getElementsByName("request_disk")[0].value+"<br>"+
         "# TODO - Queue <br>"+
-        
-        
+        "#<br>"+
+        "#<br>"+
+        "# TODO - AND/OR reqs <br>"+
+        "#<br>"+
+        "# - Advanced Options -<br>"+
         "</code>"
-       
     );
     
-    /***************************************
-     * TODO - FIX THIS PART.
-    var i;
-    var text = "";
-    var x = document.getElementById("form1");
-    for (i=0; i < x.length; i++){
-      
-      //now we need to check if the element is "checked" in the form, and if
-      //it is, we need to add it to the script that gets printed out.
-	    document.getElementById("output").innerHTML += 
-	      (						
-	      text = x.elements[i].value +"<br>"
-	      ); //why does this not advance through the list?
+    /*if (document.getElementById("adv1").checked === true){
+        document.getElementById("output").innerHTML+="<code>Arch==INTEL</code>";
+    }*/
+    
+    var i = 0;
+    for (i; i<numLines; i++){
+        if (document.getElementsByName("adv")[i].checked === true){
+            document.getElementById("output").innerHTML+= ("<code>"+document.getElementsByName("adv")[i].value+"</code><br>") ;
+        }
     }
-    */
+
+    
     window.scrollTo(0,document.body.scrollHeight);
     
 }
@@ -63,7 +65,6 @@ function readConfigFile(){
     }
     
     var fileDisplayArea = document.getElementById('fileDisplayArea');
-    //var formDisplayArea = document.getElementById('form');
     var oFrame = document.getElementById("frmFile");
     var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     
@@ -75,8 +76,9 @@ function readConfigFile(){
     for (var i = 0; i < arrLines.length; i++) {
         var curLine = arrLines[i];
         if (curLine[0] != "#"){ //ignore comments.
-	    generateForm(curLine);
-	}
+            numLines++;
+	          generateForm(curLine);
+      	}
 	
     }
     
@@ -91,7 +93,7 @@ function generateForm(textLine){
 
   var splitLine = textLine.split(","); //split the line up by commas into an array.
   document.getElementById('form1').innerHTML += 
-      "<input type=\"checkbox\" name=\"ARCH\" value=\"INTEL\">"+splitLine[2]+"<br>"; //formDisplayArea.innerHTML wasn't working right.  
+      "<input type=\"checkbox\" name=\"adv\" value=\""+splitLine[0]+"\">"+splitLine[1]+"<br>"; //formDisplayArea.innerHTML wasn't working right.  
 }
 
 

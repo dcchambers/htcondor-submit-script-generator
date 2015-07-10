@@ -2,19 +2,22 @@
 # Lines that begin with "#" are comments are are ignored.
 #
 # Format for this config file:
-# <category>,<value>,<display value>
+# <value>,<display value>
 #
-Arch,INTEL,32-bit
-Arch,x86_64,64-bit
-OpSys,Linux,Linux
-OpSys,OSX,OS X
-OpSys,Windows,Windows
-OpSysMajorVer,5,SL5
-OpSysMajorVer,6,SL6
-OpSysMajorVer,7,SL7
-HasAfs,True,AFS
-OASIS_CVMFS_Exists,True,OASIS_CVMFS
-HasHT,False,Hyper Threading
-HasJava,True,Java
-HasIntel,True,Intel CPU
-HasGluster,True,Gluster
+# Where <value> is the actual script code that goes into the submit script file,
+# and <display value> is what the user sees next to a checkbox on the form.
+#
+Arch==INTEL,32-bit
+Arch==x86_64,64-bit
+OpSys==Linux,Linux
+OpSys==OSX,OS X
+OpSys==Windows,Windows
+OpSysMajorVer==5,SL5
+OpSysMajorVer==6,SL6
+OpSysMajorVer==7,SL7
+HasAfs==True,AFS
+OASIS_CVMFS_Exists==True,OASIS_CVMFS
+HasHT==False,Hyper Threading
+HasJava==True,Java
+HasIntel==True,Intel CPU
+HasGluster==True,Gluster
