@@ -1,12 +1,12 @@
 //submit JS file
 
+/* Global Variables */
+var numLines = 0;
 
-/* This function generates the Condor Submit Script based on the HTML
+
+ /* This function generates the Condor Submit Script based on the HTML
  * that the user fills out. It is called with a submit button on the page.
  */
- 
-var numLines = 0; 
- 
 function generateScript(){
     document.getElementById("outputHeader").style.display="block";
     document.getElementById("output").style.display="block";
@@ -35,7 +35,27 @@ function generateScript(){
         "</code>"
     );
     
-    /* This part of the script generator pastes the checked advanced items into the script*/
+    /***************************** 
+     * Standard OR Requirements 
+     *****************************/
+    
+    /*CPU Architecture*/
+    if (document.getElementsByName("ArchINTEL")[0].checked === true && document.getElementsByName("ArchX86_64")[0].checked === true){
+      document.getElementById("output").innerHTML+=("<code>TARGET.Arch == \"INTEL\" || TARGET.Arch == \"X86_64\"</code><br>");
+    }
+    else if (document.getElementsByName("ArchINTEL")[0].checked === true && document.getElementsByName("ArchX86_64")[0].checked !== true){
+      document.getElementById("output").innerHTML+=("<code>TARGET.Arch == \"INTEL\"</code><br>");
+    }
+    else if (document.getElementsByName("ArchX86_64")[0].checked === true && document.getElementsByName("ArchINTEL")[0].checked !== true){
+      document.getElementById("output").innerHTML+=("<code>TARGET.Arch == \"X86_64\"</code><br>");  
+    }
+    
+    
+    
+    /* Standard AND Requirements */
+    
+    
+    /* Advanced Requirements */
     var i = 0;
     for (i; i<numLines; i++){
         if (document.getElementsByName("adv")[i].checked === true){
