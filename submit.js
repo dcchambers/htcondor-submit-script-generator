@@ -1,4 +1,4 @@
-//submit JS file
+  //submit JS file
 
 /* Global Variables */
 var numLines = 0;
@@ -50,9 +50,27 @@ function generateScript(){
       document.getElementById("output").innerHTML+=("<code>TARGET.Arch == \"X86_64\"</code><br>");  
     }
     
+    /*Operating System*/
+    /* TODO - there's gotta be a better way to do this...*/
+    
+    if (document.getElementsByName("OpSysLinux")[0].checked === true 
+    && document.getElementsByName("OpSysOSX")[0].checked === true 
+    && document.getElementsByName("OpSysWindows")[0].checked === true){
+      document.getElementById("output").innerHTML+="<code>TARGET.OpSys == \"LINUX\" || TARGET.OpSys == \"OSX\" || TARGET.OpSys == \"Windows\"</code><br>";
+    }
+    else if (document.getElementsByName("OpSysLinux")[0].checked === true 
+    && document.getElementsByName("OpSysOSX")[0].checked === true){
+      document.getElementById("output").innerHTML+="<code>TARGET.OpSys == \"LINUX\" || TARGET.OpSys == \"OSX\"</code><br>";
+    }
+    else if (document.getElementsByName("OpSysLinux")[0].checked === true 
+    && document.getElementsByName("OpSysWindows")[0].checked === true){
+      document.getElementById("output").innerHTML+="<code>TARGET.OpSys == \"LINUX\" || TARGET.OpSys == \"Windows\"</code><br>";
+    }
     
     
-    /* Standard AND Requirements */
+    /******************************
+    * Standard AND Requirements 
+    ******************************/
     
     
     /* Advanced Requirements */
