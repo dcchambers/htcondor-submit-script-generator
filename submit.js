@@ -86,6 +86,24 @@ function generateScript(){
     
 }
 
+
+//function to show the linux OS ver. Not yet working.
+function showLinuxOSVer(){
+  var checkbox = document.getElementsByName("OpSysLinux")[0];
+  var visible = "none";
+  if (checkbox[0].checked === true){
+    visible = "block";
+  }
+  else {
+    visible = "none";
+  }
+  
+  document.getElementById("linuxOSVer").style.display = visible;
+}
+
+
+
+
 /* The readConfigFile() function checks to make sure the browser supports reading
  * from a file, and then reads the config file (currently chtcrequirements.txt)
  * that will be used to create the HTML form.

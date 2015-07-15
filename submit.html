@@ -45,16 +45,17 @@
         <br>
         
         Operating System:<br>
-        <input type="checkbox" name="OpSysLinux" value="Linux" checked="yes">Linux<br>
+        <input type="checkbox" name="OpSysLinux" value="Linux" checked="yes" onclick="showLinuxOSVer()">Linux<br>
         <input type="checkbox" name="OpSysOSX" value="OSX">OS X<br>
         <input type="checkbox" name="OpSysWindows" value="Windows">Windows<br>
         <br>
         
-        Linux OS Release Version:<br>
-        /////this should only pop up if "linux" is selected above/////<br>
-        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 5.x<br>
-        <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 6.x<br>
-        
+        <div id="linuxOSVer" style="display:none">
+          Linux OS Release Version:<br>
+          /////this should only pop up if "linux" is selected above/////<br>
+          <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 5.x<br>
+          <input type="checkbox" name="OpSysMajorVer5" value = "true"> SL 6.x<br>
+        </div>
         
         <!--  AND REQUIREMENTS -->
         
