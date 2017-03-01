@@ -5,8 +5,6 @@ Github repository for the development of the HTCondor Web Submit Script generato
 
 TODO:
 
-  * Replace PHP POST Script with AJAX-style script generation.
-
   * Create the webform using a config file.
 
   * Structure config file for simple modification
